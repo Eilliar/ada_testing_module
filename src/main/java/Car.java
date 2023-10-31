@@ -23,8 +23,8 @@ public class Car {
     }
 
     public void accelerate(Integer velocity){
-        if(velocity > 0){
-            if(velocity > this.maxVelocity){
+        if(velocity > 0 & this.isOn){
+            if(this.velocity + velocity > this.maxVelocity){
                 this.velocity = this.maxVelocity;
             }
             else {
