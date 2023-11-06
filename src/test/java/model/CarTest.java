@@ -8,14 +8,14 @@ public class CarTest {
     public void startOffTest(){
         // #1 Should start turned off
         Car car1 = new Car();
-        Assert.assertTrue((car1.getOn() == Boolean.FALSE));
+        Assert.assertFalse(car1.getOn());
     }
 
     @Test
     public void startWithZeroVelocity(){
         // #2 - Start with zero velocity
         Car car = new Car();
-        Assert.assertTrue(car.getVelocity() == 0);
+        Assert.assertEquals((Integer) 0, car.getVelocity());
     }
 
     @Test
@@ -32,7 +32,7 @@ public class CarTest {
         Car car = new Car();
         car.turnOn();
         car.turnOff();
-        Assert.assertTrue(car.getOn() == Boolean.FALSE);
+        Assert.assertFalse(car.getOn());
     }
 
     @Test
@@ -41,7 +41,7 @@ public class CarTest {
         Car car = new Car();
         car.turnOn();
         car.accelerate(60);
-        Assert.assertTrue(car.getVelocity() == 60);
+        Assert.assertEquals((Integer) 60, car.getVelocity());
     }
 
     @Test
@@ -50,7 +50,7 @@ public class CarTest {
         Car car = new Car();
         car.turnOn();
         car.accelerate(-60);
-        Assert.assertTrue(car.getVelocity() == 0);
+        Assert.assertEquals((Integer) 0, car.getVelocity());
     }
 
     @Test
